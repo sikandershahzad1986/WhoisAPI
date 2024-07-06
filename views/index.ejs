@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WHOIS API</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+   
+    <div class="container">
+        <nav></nav>
+        <div class="txtdiv">
+        <form id="myForm" method="post">
+        <input id="domain" name="dm" class="textbox" type="text" placeholder="Enter Domain" requireds>
+         <input class="submit-button" id="get" type="submit" value="GET" formaction="/get">
+        </form>
+        </div>
+        <div class="rt"></div>
+       
+    <div class="contents">
+      
+            <% if (locals.server && locals.rawdata && locals.ws && locals.name && locals.created && locals.expires && locals.ns && locals.ips) { %>
+             <p>
+             <b>Server:</b> <%= server %> <br/>
+             <b>Name:</b> <%= name %> <br/>
+            <b>IPS:</b> <%= ips %> <br/>
+             <b>Created:</b> <%= created %> <br/>
+             <b>Expiry:</b> <%= expires %> <br/>
+             <b>Nameservers:</b> <%= ns %> <br/>
+             <b>Whoisserver:</b> <%= ws %> <br/>
+             <b>Raw Data:</b><%= rawdata %></p>   
+     
+    <% } else { %>
+         <p>No data found</p>
+<% } %>
+    </div>
+    <div class="lt"></div>
+
+<footer><p>Designed by: Sikander Shahzad</p></footer>
+</div>
+</body>
+</html>
